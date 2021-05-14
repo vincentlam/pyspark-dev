@@ -12,7 +12,6 @@ RUN apk add --no-cache --update bash openjdk11 tar build-base gcc libffi-dev lib
 RUN wget -O- https://apache.mirror.digitalpacific.com.au/spark/spark-${SPARK_VERSION}/${SPARK_BUILD}.tgz | tar zxf - -C /opt
 RUN wget -O- https://apache.mirror.digitalpacific.com.au/hadoop/common/${HADOOP_BUILD}/${HADOOP_BUILD}.tar.gz | tar zxf - -C /opt
 
-RUN pip install --upgrade pip setuptools wheel
-RUN pip install pyspark jupyter pytest pre-commit
+RUN pip install --no-cache-dir --upgrade pip setuptools wheel pyspark jupyter pytest pre-commit && pip cache purge
 
 RUN mkdir /opt/data
