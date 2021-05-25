@@ -10,7 +10,7 @@ ENV SPARK_HOME /opt/${SPARK_BUILD}
 RUN apt update && apt upgrade && apt install -y git wget python3.7 python3-pip python3.7-dev python3-setuptools python3-wheel
 RUN wget -O- https://apache.mirror.digitalpacific.com.au/spark/spark-${SPARK_VERSION}/${SPARK_BUILD}.tgz | tar zxf - -C /opt
 # RUN wget -O- https://apache.mirror.digitalpacific.com.au/hadoop/common/${HADOOP_BUILD}/${HADOOP_BUILD}.tar.gz | tar zxf - -C /opt
-RUN pip3 install --no-cache-dir --upgrade pip setuptools wheel black jupyter pandas pyspark pytest-cov pre-commit pytz
+RUN pip3 install --no-cache-dir --upgrade pip setuptools wheel black jupyter pandas pyspark delta-spark pytest-cov pre-commit pytz
 
 COPY jars/delta-core_2.12-0.8.0.jar /home/jars/delta-core_2.12-0.8.0.jar
 COPY conf/spark-defaults.conf /opt/${SPARK_BUILD}/conf/spark-defaults.conf
