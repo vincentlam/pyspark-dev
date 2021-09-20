@@ -1,7 +1,7 @@
 FROM openjdk:11-slim-buster
 
-ARG SPARK_VERSION=3.1.1
-ARG SPARK_BUILD=spark-3.1.1-bin-hadoop3.2
+ARG SPARK_VERSION=3.1.2
+ARG SPARK_BUILD=spark-3.1.2-bin-hadoop3.2
 # ARG HADOOP_BUILD=hadoop-3.2.2
 
 ENV HADOOP_HOME /opt/${SPARK_BUILD}
