@@ -8,7 +8,7 @@ Docker image for local development
 
 ## 1. Build
 ```
-docker build -t pyspark .
+docker build --progress=plain -t pyspark .
 ```
 
 ## 2. Run
